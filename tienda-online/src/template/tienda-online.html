@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>🛍️ Mi Tienda Online</h1>
+        <div id="user-info">
+            <span>Bienvenido, {{ usuario }}</span>
+            <a href="{{ url_for('logout') }}" class="logout-button">Cerrar sesión</a>
+        </div>
+    </header>
+
+    <!-- Contenedor de productos -->
+    <section id="productos"></section>
+
+    <!-- Carrito -->
+    <section id="carrito-container">
+        <h2>🛒 Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+
+        <!-- Formulario de datos del cliente -->
+        <form id="datosCliente">
+            <input type="text" id="nombre" name="nombre" placeholder="Tu Nombre" required>
+            <input type="text" id="direccion" name="direccion" placeholder="Tu Dirección" required>
+        </form>
+
+        <button id="btn-comprar" onclick="enviarPedido()">Confirmar Compra</button>
+        <div id="paypal-button-container"></div>
+    </section>
+
+    <!-- Formulario oculto para Formspree -->
+    <form id="formularioPedido" action="https://formspree.io/f/xwpvqrwz" method="POST" style="display: none;">
+        <input type="hidden" name="pedido" id="pedidoInput">
+        <input type="hidden" name="nombre" id="nombreInput">
+        <input type="hidden" name="direccion" id="direccionInput">
+    </form>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AVGle2VY3TpW3ztl3fNG-WLJ-DUVf9fPYb_dn5HqcITeA1tMifZy-XXv40_ikTtFnfpFVGyIe5VL9MqJ&currency=EUR"></script>
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

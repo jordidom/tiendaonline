@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tienda Online</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body>
+    <header>
+        <h1>🔑 Iniciar Sesión</h1>
+    </header>
+    
+    <section id="login-container">
+        <form id="loginForm">
+            <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+        </form>
+        <p>¿No tienes cuenta? <a href="{{url_for('registrarse')}}" id="registrarse">Regístrate</a></p>
+    </section>
+
+    <script src="../static/js/index.js"></script>
+</body>
+</html>
